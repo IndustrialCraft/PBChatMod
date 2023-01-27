@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatModMain extends Plugin {
-    public PlayerMap<PlayerChatData> playerChatData;
+    private PlayerMap<PlayerChatData> playerChatData;
     private Logger logger;
     private CommandDispatcher<ServerPlayerEntity> commandDispatcher;
     public ChatModMain(PluginWrapper wrapper) {
@@ -134,7 +134,7 @@ public class ChatModMain extends Plugin {
             event.packet.addUIComponent(new TextUIComponent(Color.WHITE, -900, -700 + (i * 60), chatData.messageHistory.get(size - i - 1), 2));
         }
     }
-    private PlayerChatData getChatData(ServerPlayerEntity playerEntity){
+    public PlayerChatData getChatData(ServerPlayerEntity playerEntity){
         PlayerChatData chatData = playerChatData.get(playerEntity);
         if(chatData == null){
             chatData = new PlayerChatData(playerEntity);
