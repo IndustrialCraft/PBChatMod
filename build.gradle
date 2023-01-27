@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url "https://libraries.minecraft.net" }
+}
+
+dependencies {
+    implementation 'com.github.IndustrialCraft.PaperByte:server:37e94f53c6'
+    implementation 'com.github.IndustrialCraft.PaperByte:shared:37e94f53c6'
+    implementation 'com.mojang:brigadier:1.0.18'
+}
